@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  cursor: help;
+  flex-direction: column;
+  position: relative;
+}
+
+#intro {
+  background-color: #f8e0dc;
+  height: 85vh;
+  width: 90vw;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  position: absolute;
+  bottom: 0;
+}
+
+a {
+  margin: 0 50px;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+  color: #959595;
+}
+
+a:hover {
+  letter-spacing: 0.5rem;
+  color: #000;
+  transition: all 0.3s;
+}
+
