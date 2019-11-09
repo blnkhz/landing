@@ -1,53 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap');
-
 body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  cursor: help;
-  flex-direction: column;
-  position: relative;
-  font-family: 'Open Sans', sans-serif;
-}
-
-#intro {
-  background-color: #f8e0dc;
-  height: 85vh;
-  width: 90vw;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#main-title {
-  font-weight: 700;
-  font-size: 3rem;
-  letter-spacing: 0.2rem;
-}
-
-#main-text {
-  font-weight: 400;
-  font-style: italic;
-}
-
-nav {
-  position: absolute;
-  bottom: 0;
-}
-
-a {
-  margin: 0 50px;
-  text-decoration: none;
-  letter-spacing: 0.1rem;
-  color: #959595;
-}
-
-a:hover {
-  letter-spacing: 0.5rem;
-  color: #000;
-  transition: all 0.3s;
+	height: 100vh;
+	background-color: #FFF;
+	margin: 0;
+	padding: 0;
+  overflow: hidden;
 }
