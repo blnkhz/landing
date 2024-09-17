@@ -30,7 +30,12 @@ export const About = ({ isVisible, handleVisibility }) => {
             <h3>experience</h3>
             <span
               className="link"
-              onClick={() => alert("i should take care of this")}
+              onClick={() =>
+                window.open(
+                  "https://raw.githubusercontent.com/blnkhz/landing/master/blanka_hooz_resume.pdf",
+                  "_blank"
+                )
+              }
             >
               download cv
             </span>
