@@ -27,6 +27,7 @@ export const About = ({ isVisible, handleVisibility }) => {
               <a
                 href="https://linkedin.com/in/blnkhz"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="link"
               >
                 linkedin
@@ -35,6 +36,7 @@ export const About = ({ isVisible, handleVisibility }) => {
               <a
                 href="https://github.com/blnkhz"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="link"
               >
                 github
@@ -43,6 +45,7 @@ export const About = ({ isVisible, handleVisibility }) => {
               <a
                 href="https://instagram.com/blnkhz"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="link"
               >
                 instagram
