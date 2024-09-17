@@ -14,7 +14,7 @@ const App = () => {
         className="styled-button contact"
         hidden={isContactFormVisible || isAboutVisible}
       >
-        say hiiii
+        say hi
       </button>
       <button
         onClick={() => setIsAboutVisible(!isAboutVisible)}

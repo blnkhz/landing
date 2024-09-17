@@ -64,7 +64,7 @@ export const ContactForm = ({ isVisible, handleVisibility }) => {
       className={`contact-form-container ${isVisible ? "visible" : "hidden"}`}
     >
       <div className="headline">
-        <h1>say hiiii 👋</h1>
+        <h1>say hi 👋</h1>
         <button
           onClick={() => {
             handleVisibility(!isVisible);
