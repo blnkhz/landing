@@ -24,6 +24,29 @@ export const About = ({ isVisible, handleVisibility }) => {
               <p>blanka e hooz</p>
               <p>software engineer</p>
               <p>budapest, hungary ✈️ los angeles, ca</p>
+              <a
+                href="https://linkedin.com/in/blnkhz"
+                target="_blank"
+                className="link"
+              >
+                linkedin
+              </a>
+              {" | "}
+              <a
+                href="https://github.com/blnkhz"
+                target="_blank"
+                className="link"
+              >
+                github
+              </a>
+              {" | "}
+              <a
+                href="https://instagram.com/blnkhz"
+                target="_blank"
+                className="link"
+              >
+                instagram
+              </a>
             </div>
           </div>
           <div className="headline">

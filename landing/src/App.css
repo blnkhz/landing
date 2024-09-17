@@ -89,4 +89,5 @@ button:not(:disabled) {
   font-style: italic;
   cursor: pointer;
   font-size: 0.75rem;
+  color: #000;
 }
