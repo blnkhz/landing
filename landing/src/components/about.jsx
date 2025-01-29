@@ -1,7 +1,101 @@
 import "./about.css";
 import Spline from "@splinetool/react-spline";
+import { useState } from "react";
+
+const experiences = [
+  {
+    company: "Bars.com via Bobcats Coding",
+    period: "july 2023 - present",
+    role: "full stack engineer",
+    projects: [
+      {
+        name: "Bars.com app",
+        details: [
+          "responsive, cross-platform web app",
+          "React + Qwik + tRPC + Koa + PostgreSQL + Google Cloud",
+          "contributed to POS system integration to provide promotional drinks for guests in participating venues",
+          "collaborated on building text message provider for user verification and marketing purposes",
+        ],
+        image: "/bars-guest-app.png",
+      },
+      {
+        name: "Bars.com admin dashboard",
+        details: [
+          "admin dashboard for Bars.com clients for promotion management and data analytics",
+          "React + Qwik + tRPC + Koa + PostgreSQL + Google Cloud",
+          "maintained and contributed to Storybook documentation",
+          "created reusable data visualization chart components from scratch",
+          "contributed to data aggregation for user analytics",
+        ],
+        image: "/bars-admin-dashboard.png",
+      },
+      {
+        name: "Bars.com website",
+        details: ["marketing website for Bars.com"],
+        image: "/bars-landing.png",
+      },
+    ],
+  },
+  {
+    company: "IBM Cloud",
+    period: "sept 2019 - july 2023",
+    role: "full stack engineer",
+    projects: [
+      {
+        name: "IBM Cloud Status & Notifications",
+        details: [
+          "React + Node.js",
+          "client-facing application that provides real-time updates on the status of IBM Cloud services",
+          "built front-end features and contributed to back-end by aggregating events by location and service type",
+          "covered contributions with unit, integration and e2e tests",
+        ],
+        image: "/ibm-status.png",
+      },
+      {
+        name: "IBM Cloud Onboarding",
+        details: [
+          "React TS + GraphQL + Node.js",
+          "web application that helps clients get started with selling their offerings on IBM Cloud",
+          "maintained and supported legacy software in an on-call schedule that served as the predecessor of this product",
+          "covered contributions with unit, integration and e2e tests",
+        ],
+        image: "/ibm-onboarding.png",
+      },
+      {
+        name: "Other",
+        details: [
+          "Cloud PAL: IBM Cloud's internal UI library. Contributed to the development of reusable UI components, ensuring consistency, accessibility and efficiency across various frontend microservices. Maintained and updated the corresponding Storybook documentation",
+          "full stack engineer on internal fraud & cybersecurity tools",
+        ],
+      },
+    ],
+  },
+  {
+    company: "Green Fox Academy",
+    period: "october 2018 - sept 2019",
+    role: "software developer mentor",
+    projects: [
+      {
+        name: "Bootcamp Mentorship",
+        details: [
+          "mentored students in Hungary's very first software development bootcamp from zero to landing their first job in the industry",
+          "contributed to teaching materials used in various parts of the course",
+          "technologies used & mentored: js, ts, java, html, css, sql, nosql, react, express, node.js",
+        ],
+      },
+    ],
+  },
+];
 
 export const About = ({ isVisible, handleVisibility }) => {
+  const [activeTooltip, setActiveTooltip] = useState(null);
+  const handleMouseEnter = (id) => {
+    setTimeout(() => setActiveTooltip(id), 50);
+  };
+
+  const handleMouseLeave = () => {
+    setTimeout(() => setActiveTooltip(null), 50);
+  };
   return (
     <div className={`about-container ${isVisible ? "visible" : "hidden"}`}>
       <div className="about-content">
@@ -23,7 +117,7 @@ export const About = ({ isVisible, handleVisibility }) => {
             <div>
               <p>blanka e hooz</p>
               <p>software engineer</p>
-              <p>budapest, hungary ✈️ los angeles, ca</p>
+              <p>los angeles, ca</p>
               <a
                 href="https://linkedin.com/in/blnkhz"
                 target="_blank"
@@ -31,15 +125,6 @@ export const About = ({ isVisible, handleVisibility }) => {
                 className="link"
               >
                 linkedin
-              </a>
-              {" | "}
-              <a
-                href="https://github.com/blnkhz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
-              >
-                github
               </a>
               {" | "}
               <a
@@ -53,7 +138,7 @@ export const About = ({ isVisible, handleVisibility }) => {
             </div>
           </div>
           <div className="headline">
-            <h3>experience</h3>
+            <h3>projects</h3>
             <span
               className="link"
               onClick={() =>
@@ -66,128 +151,49 @@ export const About = ({ isVisible, handleVisibility }) => {
               download cv
             </span>
           </div>
-          <ul className="experience-list">
-            <li>
-              <div className="experience-entry">
-                <h5>full stack engineer @ bobcats coding</h5>
-                <p>july 2023 - present</p>
-              </div>
-              <ul className="workplace-list">
-                <li>
-                  key contributor to building a hospitality marketing app for a
-                  startup client. Joined the project in its greenfield stage and
-                  have helped develop it into a now live platform in Colorado,
-                  connecting users with local bars and restaurants through POS
-                  APIs and aggregating user data on our platform derived from
-                  app usage.
-                </li>
-                <li>
-                  developing scalable and efficient application features using
-                  TypeScript, React, Qwik, tRPC, Koa, PostgreSQL and Google
-                  Cloud
-                </li>
-                <li>
-                  collaborating closely with our in-house UI/UX designer,
-                  contributing via Figma to create intuitive user interfaces.
-                  Participating in weekly stakeholder meetings to align on
-                  project goals and updates.
-                </li>
-                <li>
-                  providing on-call support during events to ensure seamless
-                  user experience and immediate issue resolution.
-                </li>
-                <li>
-                  implementing Behavior-Driven Development (BDD) and end-to-end
-                  testing using Cucumber, Playwright, and Jest to ensure
-                  high-quality deliverables.
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div className="experience-entry">
-                <h5>full stack engineer @ ibm</h5>
-                <p>sept 2019 - july 2023</p>
-              </div>
-              <ul className="workplace-list">
-                <li>
-                  contributed to both internal tools and client-facing
-                  applications within the IBM Cloud microservice ecosystem over
-                  a period of 3 years and 9 months at IBM Budapest Lab.
-                </li>
-                <li>
-                  enhanced application accessibility (a11y) and implemented
-                  internationalization (i18n) to make applications more
-                  inclusive and globally adaptable.
-                </li>
-                <li>
-                  increased unit test coverage to over 80% in certain
-                  repositories during idle time, employing Jest and Cypress for
-                  unit and end-to-end testing.
-                </li>
-                <li>
-                  worked with teams across multiple locations, operating in
-                  two-week sprints to deliver high-quality software.
-                </li>
-                <li>
-                  participated in an on-call rotation to ensure service
-                  reliability and prompt issue resolution for our services.
-                </li>
-                <li>
-                  technologies Used: JavaScript, TypeScript, Node.js,
-                  Express.js, IBM Cloud services, NoSQL (Cloudant), Travis CI,
-                  Jest, Cypress
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div className="experience-entry">
-                <h5>software developer mentor @ green fox academy</h5>
-                <p>october 2018 - sept 2019</p>
-              </div>
-              <ul className="workplace-list">
-                <li>
-                  mentored bootcamp students from zero to landing their first
-                  developer job
-                </li>
-                <li>
-                  contributed to teaching materials used in various parts of the
-                  course
-                </li>
-                <li>
-                  technologies used & mentored: js, ts, java, html, css, sql,
-                  nosql, react, express, node.js
-                </li>
-              </ul>
-            </li>
-          </ul>
         </>
-        <div className="headline">
-          <h3>education</h3>
-        </div>
-        <ul className="experience-list">
-          <li>
-            <div className="experience-entry">
-              <h5>
-                junior software developer @ green fox academy, budapest, hungary
-              </h5>
-              <p>2018</p>
-            </div>
-          </li>
-          <li>
-            <div className="experience-entry">
-              <h5>
-                business administration BA @ middlesex university, london, uk
-              </h5>
-              <p>2014-2018</p>
-            </div>
-          </li>
-          <li>
-            <div className="experience-entry">
-              <h5>business administration BA @ university of pécs, hungary</h5>
-              <p>2014-2018</p>
-            </div>
-          </li>
-        </ul>
+        <section>
+          <ul className="experience-list">
+            {experiences.map((workplace, workplaceIndex) => (
+              <li key={workplaceIndex}>
+                <div className="experience-entry">
+                  <h5>
+                    {workplace.role} @ {workplace.company}
+                  </h5>
+                  <p>{workplace.period}</p>
+                </div>
+                {workplace.projects.map((project, projectIndex) => (
+                  <div key={projectIndex} className="project-container">
+                    <h6
+                      className="project-title"
+                      onMouseEnter={(e) => {
+                        e.stopPropagation();
+                        handleMouseEnter(`${workplaceIndex}-${projectIndex}`);
+                      }}
+                      onMouseLeave={(e) => {
+                        e.stopPropagation();
+                        handleMouseLeave();
+                      }}
+                    >
+                      {project.name}
+                    </h6>
+                    <ul className="workplace-list">
+                      {project.details.map((detail, detailIndex) => (
+                        <li key={detailIndex}>{detail}</li>
+                      ))}
+                    </ul>
+                    {activeTooltip === `${workplaceIndex}-${projectIndex}` &&
+                      project.image && (
+                        <div className="tooltip-overlay">
+                          <img src={project.image} alt={project.name} />
+                        </div>
+                      )}
+                  </div>
+                ))}
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </div>
   );
