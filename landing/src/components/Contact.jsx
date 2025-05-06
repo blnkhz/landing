@@ -31,7 +31,7 @@ export default function ContactModal() {
     <>
       <button
         onClick={openModal}
-        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        className="px-4 py-2 bg-rose-500 text-white rounded hover:bg-black"
       >
         say hi
       </button>
@@ -89,7 +89,7 @@ export default function ContactModal() {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-rose-500 text-white rounded hover:bg-blue-700"
+                  className="px-4 py-2 bg-rose-500 text-white rounded hover:bg-black"
                 >
                   submit
                 </button>
