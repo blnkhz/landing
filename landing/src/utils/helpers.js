@@ -23,3 +23,17 @@ export const submitToGoogleForms = async ({ name, email, message }) => {
     console.error('Form submission error:', err)
   }
 }
+
+export const generateRandomBackground = () => {
+  const prefixes = ['b1', 'b2', 'b3', 'b4', 'b5']
+  const prefix = prefixes[Math.floor(Math.random() * prefixes.length)]
+
+  const speed = Math.floor(Math.random() * 6)
+  const hue = Math.floor(Math.random() * 16).toString(16)
+  const sat = (4 + Math.floor(Math.random() * 5)).toString()
+  const ligthOptions = ['8', '9', 'a', 'b', 'c', 'd']
+  const lightness =
+    ligthOptions[Math.floor(Math.random() * ligthOptions.length)]
+
+  return `${prefix}.${speed}${hue}${sat}${lightness}`
+}
