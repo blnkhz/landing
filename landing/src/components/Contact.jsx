@@ -56,7 +56,7 @@ export default function ContactModal() {
               <input
                 type="text"
                 name="name"
-                placeholder="Name"
+                placeholder="name"
                 className="w-full border px-3 py-2 rounded focus:outline-1 focus:outline-offset-0 focus:outline-black focus:border-black bg-white"
                 value={form.name}
                 onChange={handleChange}
@@ -65,7 +65,7 @@ export default function ContactModal() {
               <input
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="email"
                 className="w-full border px-3 py-2 rounded focus:outline-1 focus:outline-offset-0 focus:outline-black focus:border-black bg-white"
                 value={form.email}
                 onChange={handleChange}
@@ -73,7 +73,7 @@ export default function ContactModal() {
               />
               <textarea
                 name="message"
-                placeholder="Message"
+                placeholder="message"
                 className="w-full border px-3 py-2 rounded focus:outline-1 focus:outline-offset-0 focus:outline-black focus:border-black bg-white"
                 value={form.message}
                 onChange={handleChange}
