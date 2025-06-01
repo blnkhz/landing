@@ -10,9 +10,24 @@ export default function Window({
   defaultPosition = { x: 0, y: 24 },
 }) {
   const [minimized, setMinimized] = useState(startMinimized)
+  const [isDragging, setIsDragging] = useState(false)
   const nodeRef = useRef(null)
 
   const handleMinimize = () => setMinimized((prev) => !prev)
+
+  const handleStart = () => {
+    setIsDragging(true)
+    if (nodeRef.current) {
+      nodeRef.current.style.willChange = 'transform'
+    }
+  }
+
+  const handleStop = () => {
+    setIsDragging(false)
+    if (nodeRef.current) {
+      nodeRef.current.style.willChange = 'auto'
+    }
+  }
 
   return (
     <Draggable
@@ -21,10 +36,20 @@ export default function Window({
       bounds="parent"
       cancel="button, a"
       defaultPosition={defaultPosition}
+      onStart={handleStart}
+      onStop={handleStop}
+      enableUserSelectHack={false}
     >
       <div
         ref={nodeRef}
-        className="absolute w-full max-w-[min(90vw,400px)] max-h-[calc(100vh-24px)] overflow-hidden bg-white border-2 border-black shadow-[10px_10px_0_black] rounded-[1rem] transition-all duration-500 ease-in-out tracking-wide"
+        className={`absolute w-full max-w-[min(90vw,400px)] max-h-[calc(100vh-24px)] overflow-hidden bg-white border-2 border-black shadow-[10px_10px_0_black] rounded-[1rem] tracking-wide ${
+          isDragging
+            ? ''
+            : 'transition-all duration-500 ease-in-out'
+        }`}
+        style={{
+          transform: 'translate3d(0, 0, 0)',
+        }}
       >
         <div
           className={`drag-handle cursor-move flex items-center justify-between bg-rose-300 text-white px-4 py-1 ${
@@ -48,9 +73,13 @@ export default function Window({
           </div>
         </div>
         <div
-          className={`transition-all duration-300 ease-in-out ${
+          className={`${
             minimized ? 'max-h-0 opacity-0' : 'p-4 opacity-100'
-          } overflow-auto`}
+          } overflow-auto ${
+            isDragging
+              ? ''
+              : 'transition-all duration-300 ease-in-out'
+          }`}
         >
           {children}
         </div>
