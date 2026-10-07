@@ -1,12 +1,21 @@
-# React + Vite
+# blnkhz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal site of Blanka Hooz. Vite + React, no UI libraries.
 
-Currently, two official plugins are available:
+- `npm run dev` – local dev server
+- `npm run build` – production build to `dist/`, then prerenders the page to static HTML (`scripts/prerender.js`, via `src/entry-server.jsx`); the client hydrates it
+- `npm run deploy` – build and publish `dist/` to GitHub Pages
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The display face is self-hosted in `public/fonts/` (SIL OFL) and preloaded from `index.html`.
 
-## Expanding the ESLint configuration
+## Where things live
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/content.jsx` – all copy, links, jobs, toolkit and hobbies
+- `src/components/` – one component per section
+- `src/lib/` – the canvas engines, framework-free:
+  - `hero.js` – the name rasterised as generation zero of Conway's Life, scrubbed by scroll, plus pong
+  - `rule.js` – the elementary automaton woven row by row
+  - `lifeField.js` – the live Life field behind the contact card
+  - `mesh.js` – the WebGL iridescent mesh gradient
+  - `loop.js` – the single shared animation loop
+  - `status.js` – the live readout in the top bar

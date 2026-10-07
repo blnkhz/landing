@@ -1,26 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#fda4af" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f4f0e7" />
+    <meta
+      name="description"
+      content="Blanka Hooz, software engineer in Los Angeles. UI engineering, design systems and accessibility."
+    />
     <title>blnkhz</title>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-04S709PPMT"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
-      gtag('js', new Date())
-      gtag('config', 'G-04S709PPMT')
-    </script>
+    <link
+      rel="preload"
+      href="/fonts/unifraktur-maguntia-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Cloudflare Web Analytics: cookieless, also reports real-visitor Core Web Vitals -->
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "edd3dcd909624ea398242ec6e92064cd"}'
+    ></script>
   </body>
 </html>

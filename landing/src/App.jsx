@@ -1,22 +1,32 @@
-import { useEffect, useState } from 'react'
-import gradientGL from 'gradient-gl'
-import './App.css'
-import IntroCard from './components/IntroCard'
-import { generateRandomBackground } from './utils/helpers'
-import { ContactModal } from './components/Contact'
+import MeshGradient from './components/MeshGradient'
+import StatusBar from './components/StatusBar'
+import Hero from './components/Hero'
+import About from './components/About'
+import Marquee from './components/Marquee'
+import Experience from './components/Experience'
+import RuleSection from './components/RuleSection'
+import Toolkit from './components/Toolkit'
+import SayHi from './components/SayHi'
+import Footer from './components/Footer'
+import GliderCursor from './components/GliderCursor'
+import { sections } from './content'
 
-function App() {
-  const [showContact, setShowContact] = useState(false)
-  useEffect(() => {
-    gradientGL(generateRandomBackground())
-  }, [])
-
+export default function App() {
   return (
-    <div className="relative w-screen h-screen overflow-hidden p-2 sm:p-4">
-      <IntroCard onOpenModal={() => setShowContact(true)} onClose={() => {}} />
-      {showContact && <ContactModal onClose={() => setShowContact(false)} />}
-    </div>
+    <>
+      <MeshGradient />
+      <StatusBar />
+      <main id="top">
+        <Hero />
+        <About />
+        <Marquee />
+        {sections.experience && <Experience />}
+        <Toolkit />
+        <RuleSection />
+        <SayHi />
+        <Footer />
+      </main>
+      <GliderCursor />
+    </>
   )
 }
-
-export default App
