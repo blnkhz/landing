@@ -139,6 +139,16 @@ button:focus-visible {
     text-overflow: ellipsis;
     min-width: 0;
   }
+  /* between automata there's no live readout, only the generic rule text: skip it on phones */
+  .bar #status[data-idle] {
+    visibility: hidden;
+  }
+  /* pong: keep the message and quit/retry clear of the paddle zone at the bottom
+     (.stage raises specificity over the base .pong-ui rule further down) */
+  .stage .pong-ui {
+    top: calc(56px + env(safe-area-inset-top, 0px));
+    bottom: auto;
+  }
   .bar nav {
     grid-column: 2;
   }

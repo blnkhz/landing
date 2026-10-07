@@ -23,10 +23,14 @@ export const status = {
       const r = el.getBoundingClientRect()
       if (r.top <= mid && r.bottom >= mid) {
         owner = name
+        if (node) delete node.dataset.idle
         return
       }
     }
     owner = 'none'
-    if (node && node.textContent !== FALLBACK) node.textContent = FALLBACK
+    if (!node) return
+    // marked idle so CSS can drop the generic rule text on small screens
+    node.dataset.idle = ''
+    if (node.textContent !== FALLBACK) node.textContent = FALLBACK
   },
 }
