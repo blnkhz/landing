@@ -143,9 +143,9 @@ button:focus-visible {
   .bar #status[data-idle] {
     visibility: hidden;
   }
-  /* pong: keep the message and quit/retry clear of the paddle zone at the bottom
-     (.stage raises specificity over the base .pong-ui rule further down) */
-  .stage .pong-ui {
+  /* breakout: keep the message and quit/retry clear of the paddle zone at the bottom
+     (.stage raises specificity over the base .breakout-ui rule further down) */
+  .stage .breakout-ui {
     top: calc(56px + env(safe-area-inset-top, 0px));
     bottom: auto;
   }
@@ -212,7 +212,7 @@ button:focus-visible {
 .hero-foot .hint {
   text-align: right;
 }
-.pong-btn {
+.breakout-btn {
   pointer-events: auto;
   font: inherit;
   font-size: var(--step-0);
@@ -223,32 +223,32 @@ button:focus-visible {
   padding: 10px 18px;
   cursor: pointer;
 }
-.pong-btn:hover {
+.breakout-btn:hover {
   background: var(--paper);
   color: var(--ink);
 }
 /* the hero's invitation stays quiet: a small outlined tag, not a call to action */
-.hero-foot .pong-btn {
+.hero-foot .breakout-btn {
   background: transparent;
   color: var(--ink);
   font-size: var(--step--1);
   padding: 5px 10px;
   border-color: color-mix(in srgb, var(--ink) 35%, transparent);
 }
-.hero-foot .pong-btn:hover {
+.hero-foot .breakout-btn:hover {
   background: var(--ink);
   color: var(--paper);
   border-color: var(--ink);
 }
-.pong-btn.ghost {
+.breakout-btn.ghost {
   background: transparent;
   color: var(--ink);
 }
-.pong-btn.ghost:hover {
+.breakout-btn.ghost:hover {
   background: var(--ink);
   color: var(--paper);
 }
-.pong-ui {
+.breakout-ui {
   position: absolute;
   left: 50%;
   bottom: calc(22px + env(safe-area-inset-bottom, 0px));
@@ -261,23 +261,23 @@ button:focus-visible {
   font-size: var(--step--1);
   letter-spacing: 0.05em;
 }
-.pong-ui p {
+.breakout-ui p {
   margin: 0;
 }
-.pong-actions {
+.breakout-actions {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
   justify-content: center;
 }
-html.pong .hero-foot {
+html.breakout .hero-foot {
   display: none;
 }
-html.pong .stage {
+html.breakout .stage {
   touch-action: none;
   cursor: none;
 }
-html.pong #cells {
+html.breakout #cells {
   cursor: none;
 }
 .genbar {

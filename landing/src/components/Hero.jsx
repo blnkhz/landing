@@ -56,12 +56,12 @@ export default function Hero() {
             budapest, hungary <b>✈ los angeles, ca</b>
           </p>
           <button
-            className="pong-btn"
+            className="breakout-btn"
             ref={playRef}
             type="button"
             onClick={() => engineRef.current.start()}
           >
-            ▸ play pong
+            ▸ play breakout
           </button>
           <p className="hint">
             scroll advances the generations
@@ -69,12 +69,12 @@ export default function Hero() {
             click to drop an r-pentomino
           </p>
         </div>
-        <div className="pong-ui" hidden={game.mode === 'idle'}>
+        <div className="breakout-ui" hidden={game.mode === 'idle'}>
           <p aria-live="polite">{game.message}</p>
-          <div className="pong-actions">
+          <div className="breakout-actions">
             {game.mode === 'over' && (
               <button
-                className="pong-btn"
+                className="breakout-btn"
                 ref={againRef}
                 type="button"
                 onClick={() => engineRef.current.retry()}
@@ -83,7 +83,7 @@ export default function Hero() {
               </button>
             )}
             <button
-              className="pong-btn ghost"
+              className="breakout-btn ghost"
               type="button"
               onClick={() => engineRef.current.quit()}
             >

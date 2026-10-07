@@ -13,7 +13,7 @@ The display face is self-hosted in `public/fonts/` (SIL OFL) and preloaded from 
 - `src/content.jsx` – all copy, links, jobs, toolkit and hobbies
 - `src/components/` – one component per section
 - `src/lib/` – the canvas engines, framework-free:
-  - `hero.js` – the name rasterised as generation zero of Conway's Life, scrubbed by scroll, plus pong
+  - `hero.js` – the name rasterised as generation zero of Conway's Life, scrubbed by scroll, plus breakout
   - `rule.js` – the elementary automaton woven row by row
   - `lifeField.js` – the live Life field behind the contact card
   - `mesh.js` – the WebGL iridescent mesh gradient

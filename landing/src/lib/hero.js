@@ -13,7 +13,7 @@ const LEVELS = [1, 0.42, 0.2, 0.08]
 
 /**
  * The hero: the name, rasterised into a cell grid, is generation zero of Life.
- * Scroll position picks the generation. A pong mode turns live cells into bricks.
+ * Scroll position picks the generation. A breakout mode turns live cells into bricks.
  * Game state is reported through `onGame({ mode, message, again })` so React can
  * render the controls; mode is 'idle' | 'playing' | 'over'.
  */
@@ -175,10 +175,10 @@ export function createHero({ section, stage, canvas, fill, onGame }) {
     schedulePrecompute()
   }
 
-  /* ---------- pong: the cells on screen become the bricks ---------- */
+  /* ---------- breakout: the cells on screen become the bricks ---------- */
 
   function lockScroll(on) {
-    document.documentElement.classList.toggle('pong', on)
+    document.documentElement.classList.toggle('breakout', on)
     document.documentElement.style.overflow = on ? 'hidden' : ''
   }
 
@@ -406,8 +406,8 @@ export function createHero({ section, stage, canvas, fill, onGame }) {
     status.set(
       'hero',
       G.lost
-        ? `pong · game over · broke ${pad(G.cleared, 4)}`
-        : `pong · broke ${pad(G.cleared, 4)} · left ${pad(G.left, 4)} · ${balls}`,
+        ? `breakout · game over · broke ${pad(G.cleared, 4)}`
+        : `breakout · broke ${pad(G.cleared, 4)} · left ${pad(G.left, 4)} · ${balls}`,
     )
   }
 
