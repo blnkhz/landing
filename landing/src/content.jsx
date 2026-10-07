@@ -11,7 +11,6 @@ export const links = {
   studio: 'https://latestagehumanism.com',
   losien: 'https://losien.to',
   plotter: 'https://blnkhz.github.io/plotter-tools',
-  resume: `${import.meta.env.BASE_URL}blanka-hooz-resume.pdf`,
 }
 
 export const about = {

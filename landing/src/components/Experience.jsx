@@ -1,4 +1,4 @@
-import { jobs, links } from '../content'
+import { jobs } from '../content'
 
 export default function Experience() {
   return (
@@ -12,12 +12,7 @@ export default function Experience() {
             four places
           </h2>
         </div>
-        <p>
-          A big cloud, a few startups, and a year teaching people to code. Details are in the{' '}
-          <a href={links.resume} target="_blank" rel="noopener">
-            résumé (pdf) ↗
-          </a>
-        </p>
+        <p>A big cloud, a few startups, and a year teaching people to code.</p>
       </div>
       <ol className="jobs" reversed>
         {jobs.map((job) => (
