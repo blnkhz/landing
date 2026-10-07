@@ -49,9 +49,11 @@ export default function Hero() {
         </h1>
         <div className="hero-foot">
           <p>
+            <i>blnkhz</i>
+            <br />
             blanka hooz · software engineer
             <br />
-            budapest, hungary ✈ los angeles, ca
+            budapest, hungary <b>✈ los angeles, ca</b>
           </p>
           <button
             className="pong-btn"
