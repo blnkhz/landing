@@ -11,6 +11,7 @@ export const links = {
   studio: 'https://latestagehumanism.com',
   losien: 'https://losien.to',
   plotter: 'https://blnkhz.github.io/plotter-tools',
+  briking: 'https://brik.ing',
 }
 
 export const about = {

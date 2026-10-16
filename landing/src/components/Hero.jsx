@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { createHero } from '../lib/hero'
 import { status } from '../lib/status'
 import { onFrame } from '../lib/loop'
+import { links } from '../content'
 
 export default function Hero() {
   const sectionRef = useRef(null)
@@ -81,6 +82,16 @@ export default function Hero() {
               >
                 {game.again}
               </button>
+            )}
+            {game.mode === 'over' && (
+              <a
+                className="breakout-btn ghost"
+                href={links.briking}
+                target="_blank"
+                rel="noopener"
+              >
+                more at brik.ing ↗
+              </a>
             )}
             <button
               className="breakout-btn ghost"
