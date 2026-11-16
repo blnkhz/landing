@@ -12,6 +12,7 @@ export const links = {
   losien: 'https://losien.to',
   plotter: 'https://blnkhz.github.io/plotter-tools',
   briking: 'https://brik.ing',
+  plotka: 'https://plotka.app',
 }
 
 export const about = {
@@ -107,7 +108,7 @@ export const toolkit = [
 export const hobbies = [
   { label: '3D modeling' },
   { label: 'Illustration' },
-  { label: 'Pen plotting' },
+  { label: 'Pen plotting', href: links.plotka },
   { label: 'Lino printing' },
   { label: 'Generative art' },
 ]
